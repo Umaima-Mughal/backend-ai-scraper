@@ -1,3 +1,4 @@
+from saver import save_books
 from fetcher import fetch_page
 from parser import parse_html
 from extractor import extract_books
@@ -14,5 +15,6 @@ if __name__ == "__main__":
 
     cleaned_books = clean_books(books)
 
-    for book in cleaned_books[:5]:
-        print(book)
+    save_books(cleaned_books)
+
+    print("Books saved successfully!")
