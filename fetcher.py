@@ -2,14 +2,8 @@ import requests
 
 
 def fetch_page(url):
-    response = requests.get(
-        url,
-        headers={
-            "User-Agent": "EducationalScraper/1.0"
-        },
-        timeout=10
-    )
+    response = requests.get(url)
 
-    response.raise_for_status()
+    response.encoding = "utf-8"
 
     return response.text

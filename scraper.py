@@ -1,5 +1,6 @@
 from fetcher import fetch_page
 from parser import parse_html
+from extractor import extract_books
 
 
 if __name__ == "__main__":
@@ -9,4 +10,7 @@ if __name__ == "__main__":
 
     soup = parse_html(html)
 
-    print(soup.title.text.strip())
+    books = extract_books(soup)
+
+    for book in books[:5]:
+        print(book)
