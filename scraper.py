@@ -8,7 +8,7 @@ from cleaner import clean_books
 
 
 START_URL = "https://books.toscrape.com/"
-MAX_PAGES = 2
+MAX_PAGES = None
 
 
 def scrape_pages(start_url, max_pages=None):
