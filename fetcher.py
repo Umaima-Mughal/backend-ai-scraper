@@ -28,6 +28,10 @@ def _robots_allows(url):
 
     if base_url in _robots_cache:
         parser = _robots_cache[base_url]
+
+        if parser is None:
+            return True
+
         return parser.can_fetch(USER_AGENT, url)
 
     _wait_for_rate_limit()
